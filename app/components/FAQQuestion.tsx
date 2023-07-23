@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { FaChevronDown } from "react-icons/fa";
-import { Collapse, Card, CardBody } from "@material-tailwind/react";
+// import { Collapse, Card, CardBody } from "@material-tailwind/react";
 
 interface FAQQuestionProps {
   question: string;
@@ -26,13 +26,13 @@ const FAQQuestion = function ({ question, answer }: FAQQuestionProps) {
         <FaChevronDown className="" size={25} />
       </div>
 
-      <Collapse open={open}>
+      {/* <Collapse open={open}>
         <Card>
           <CardBody className="w-[100%] h-[100%] border-none px-8 py-4 text-sm sm:text-md ">
             {answer}
           </CardBody>
         </Card>
-      </Collapse>
+      </Collapse> */}
     </div>
   );
 };
