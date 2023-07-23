@@ -1,32 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { AiOutlineArrowDown } from "react-icons/ai";
-import type { CollapseStylesType } from "@material-tailwind/react";
-import { FaChevronCircleDown, FaChevronDown } from "react-icons/fa";
-import {
-  Collapse,
-  Button,
-  Card,
-  Typography,
-  CardBody,
-} from "@material-tailwind/react";
+
+import { FaChevronDown } from "react-icons/fa";
+import { Collapse, Card, CardBody } from "@material-tailwind/react";
 
 interface FAQQuestionProps {
   question: string;
   answer: string;
 }
 
-const theme = {
-  collapse: {
-    styles: {
-      base: {
-        backgroundColor: "bg-white",
-        borderRadius: "rounded-lg",
-      },
-    },
-  },
-};
 const FAQQuestion = function ({ question, answer }: FAQQuestionProps) {
   const [open, setOpen] = useState(false);
   return (

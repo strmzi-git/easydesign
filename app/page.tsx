@@ -64,7 +64,7 @@ export default function Home() {
       <FeaturesPage />
       <PricingPage />
       <CallToAction />
-      <FAQ />
+      {/* <FAQ /> */}
       <Footer />
     </div>
   );
