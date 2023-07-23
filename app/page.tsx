@@ -61,11 +61,11 @@ export default function Home() {
       <ToasterProvider />
       <Header />
       <MainPage />
-      <FeaturesPage />
+      {/* <FeaturesPage />
       <PricingPage />
-      <CallToAction />
+      <CallToAction /> */}
       {/* <FAQ /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
