@@ -1,113 +1,71 @@
-import Image from 'next/image'
-
+import Header from "./components/Header";
+import MainPage from "./components/PageComponents/MainPage";
+import FeaturesPage from "./components/PageComponents/FeaturesPage";
+import PricingPage from "./components/PageComponents/PricingPage";
+import ToasterProvider from "./components/providers/ToasterProvider";
+import Image from "next/image";
+import CallToAction from "./components/PageComponents/CallToAction";
+import Footer from "./components/PageComponents/Footer";
+import FAQ from "./components/FAQ";
+// bg-custom-gradient
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="relative  ">
+      <div className="h-[115vh] overflow-hidden  w-[100vw] absolute ">
+        <div className="absolute z-20 w-[100%]  h-[100%]">
+          <div className="w-[50%] top-[5%] h-[50%] left-[50%] flex-shrink-0 rounded-[400px] bg-blueCircle absolute blur-[200px]"></div>
+          <div className="w-[50%] top-[10%] h-[45%] left-[2%] flex-shrink-0 absolute rounded-[400px] bg-blueCircle blur-[200px]"></div>
         </div>
+        <div className="flex w-[100%] z-30 absolute h-[750px] items-start justify-between gap-[75px] flex-shrink-0">
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+        </div>
+        <div className="flex w-[100%] z-30 flex-col absolute h-[300px] justify-between gap-[100px] flex-shrink-0">
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+          <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
+        </div>
+
+        {/* <div className="z-0 bg-white w-[500px] h-[500px] border border-white rounded-full top-[-4%] right-[-5%] blur-3xl shadow-2xl bg-opacity-20 absolute"></div>
+        <div className="z-0 bg-white w-[500px] h-[500px] border border-white rounded-full top-[-30%] left-[55%] blur-3xl shadow-2xl bg-opacity-20 absolute"></div>
+        <div className="z-0 bg-white w-[500px] h-[500px] border border-white rounded-full blur-3xl top-[15%] left-[5%] absolute  bg-opacity-30"></div>
+        <div className="z-0 bg-white triangle-clip w-[1000px] h-[1000px] blur-2xl top-[-15%] left-[-15%] absolute  bg-opacity-10"></div>
+        <div className="z-0 bg-white triangle-clip w-[500px] h-[500px] blur-2xl top-[65%] transform rotate-[-35deg] left-[80%] absolute  bg-opacity-10"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[10%] left-[15%] absolute  bg-opacity-90 blur-md"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[65%] left-[5%] absolute  bg-opacity-90 blur-md"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[73%] left-[65%] absolute  bg-opacity-90 blur-md"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[25%] left-[95%] absolute  bg-opacity-90 blur-md"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[46%] left-[28%] absolute  bg-opacity-90 blur-md"></div>
+        <div className="z-0 bg-white triangle-clip w-[30px] h-[30px]  top-[68%] left-[83%] absolute  bg-opacity-90 blur-md"></div> */}
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <ToasterProvider />
+      <Header />
+      <MainPage />
+      <FeaturesPage />
+      <PricingPage />
+      <CallToAction />
+      <FAQ />
+      <Footer />
+    </div>
+  );
 }
