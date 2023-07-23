@@ -3,11 +3,12 @@ import { doc, updateDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+//   runti,
+// };
 
 const stripe = new Stripe(
   "sk_test_51NRABnHvKmtkdhL0Mbn3QbJHYmVnVWujFYy6nNR97R5P437NAB17Xtla4mWDrwRiR2AWRL0XlQ23ODJUtFAAE70c00sGpdyEVS",
