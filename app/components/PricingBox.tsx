@@ -72,11 +72,13 @@ const PricingBox = function ({
     border
     px-[12px] py-8
 
+
     ${
       recommended
-        ? "border-primary1 shadow-recommended-pricing w-[330px] h-[500px]"
-        : "border-[#E7E7E7] shadow-normal-pricing w-[300px] h-[450px]"
+        ? "border-primary1 w-[100%] shadow-recommended-pricing xs:w-[330px] h-[500px]"
+        : "border-[#E7E7E7] w-[100%] shadow-normal-pricing xs:w-[300px] h-[450px]"
     }
+
     
     `}
     >

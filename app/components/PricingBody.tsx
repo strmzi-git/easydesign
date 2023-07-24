@@ -37,7 +37,7 @@ const PricingBody = function () {
   console.log("loop");
   return (
     <div className="">
-      <div className="flex justify-center items-center flex-col gap-6 md:flex-row md:gap-4">
+      <div className="flex justify-center items-center flex-col gap-6 lg:flex-row md:gap-4">
         <PricingBox
           userRefId={userId}
           currentUser={user}

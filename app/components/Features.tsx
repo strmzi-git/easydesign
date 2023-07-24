@@ -14,7 +14,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
@@ -30,7 +32,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
@@ -48,7 +52,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
@@ -66,7 +72,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
@@ -84,7 +92,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
@@ -101,7 +111,9 @@ const Features = function ({
       {/* ------ LIST ITEM ------ */}
       <li
         className={`flex items-center w-[100%] gap-2  ${
-          recommended ? "text-[19px]" : "text-[18px]"
+          recommended
+            ? "text-[16px] xs:text-[19px]"
+            : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">

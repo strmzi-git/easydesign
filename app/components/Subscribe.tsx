@@ -30,7 +30,7 @@ const Subscribe = function () {
     }
   };
   return (
-    <div className="relative  justify-center  w-[450px] flex flex-col sm:flex-row items-center gap-4 sm:gap-2 ">
+    <div className="relative  justify-center  w-full max-w-[450px] flex flex-col sm:flex-row items-center gap-4 sm:gap-2 ">
       <Input
         glass
         errors={errors}
@@ -39,7 +39,7 @@ const Subscribe = function () {
         placeholder="Email Address"
         id="input"
       />
-      <div className="absolute right-1 rounded-lg overflow-hidden  ">
+      <div className={` md:absolute right-1 rounded-lg overflow-hidden  `}>
         <Button
           primary
           functionality={handleSubmit(formSubmit)}
