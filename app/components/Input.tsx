@@ -21,19 +21,19 @@ const Input = function ({
 }: InputProps): JSX.Element {
   return (
     <div
-      className={`relative grow w-full rounded-md z-0 bg-white bg-opacity-40 max-w-[450px] `}
+      className={`relative grow w-full rounded-lg z-0 bg-white bg-opacity-40 max-w-[450px] `}
     >
       <input
         {...register(formId, { required: true })}
         id={formId}
         className={`pl-4 pr-2 ${
           glass && "blur-50px"
-        } flex items-center font-light relative shadow-lg pr-[40%] md:shadow-sm w-full z-50 bg-transparent outline-none h-[50px] text-black peer`}
+        } flex items-center rounded-lg relative shadow-lg pr-[40%] md:shadow-sm w-full z-50 bg-transparent outline-none h-[55px] text-black peer`}
         placeholder=" "
       />
 
       <label
-        className={`absolute text-sm top-[4px] z-30 transform scale-[0.85] transition duration-300 peer-placeholder-shown:scale-[0.95] peer-placeholder-shown:translate-y-[11px] font-light left-4 peer-focus:scale-[0.75] peer-focus:translate-y-[-4px] origin-left  peer-focus:text-[#333333] `}
+        className={`absolute text-sm top-[5px] z-30 transform transition duration-300 peer-placeholder-shown:scale-[0.95] peer-placeholder-shown:translate-y-[11px]  left-4 peer-focus:scale-[0.75] peer-focus:translate-y-[-4px] origin-left  peer-focus:text-[#333333] `}
       >
         {placeholder}
       </label>

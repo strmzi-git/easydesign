@@ -99,20 +99,29 @@ const Header = function ({ subPage }: HeaderProps) {
   return (
     <div>
       <Container>
-        <div className={"h-[75px] w-full  flex items-center justify-between"}>
-          <Image
+        <div
+          className={`h-[75px] w-full  flex items-center ${
+            subPage ? "justify-end" : "justify-center"
+          } `}
+        >
+          {/* <Image
             src="/images/Logov5.png"
             alt="Easy Design logo"
+            className="opacity-0"
             height={175}
             width={175}
-          />
+          /> */}
 
-          <div className="w-[70%] flex items-center justify-end gap-6 text-primaryText">
+          <div
+            className={`w-[70%] flex items-center ${
+              subPage ? "justify-end" : "justify-center"
+            } gap-6 text-gray900`}
+          >
             {isMobile ? (
               <RxHamburgerMenu size={25} />
             ) : (
               <>
-                {!subPage ? (
+                {!subPage && (
                   <>
                     <a
                       href="#pricing"
@@ -131,20 +140,12 @@ const Header = function ({ subPage }: HeaderProps) {
 
                     <Button
                       primary
+                      disabled
                       label="View collection"
-                      functionality={() => {
-                        router.push("/collection");
-                      }}
+                      // functionality={() => {
+                      //   router.push("/collection");
+                      // }}
                     />
-                  </>
-                ) : (
-                  <>
-                    {/* <Button
-                      label={"Enjoy Premium"}
-                      functionality={() => {
-                        router.push("/#pricing");
-                      }}
-                    /> */}
                   </>
                 )}
 

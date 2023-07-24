@@ -21,6 +21,8 @@ module.exports = {
         size: "width height",
       },
       boxShadow: {
+        "recommended-pricing": " 4px 4px 15px 2px rgba(0, 156, 255, 0.52)",
+        "normal-pricing": " 1px 1px 15px 1px rgba(0, 0, 0, 0.13)",
         "button-shadow": "-1px 15px 15px -10.5px #A56FFC",
         pricingShadow: "0px 4px 15px 0px rgba(0,0,0,0.2)",
         pricingShadow2: "0px 4px 25px 0px rgba(0,0,0,0.3)",
@@ -32,8 +34,11 @@ module.exports = {
         primaryText: "#343E3A",
         blueCircle: "#009cff",
         redCircle: "#A56FFC",
+        gray900: "#002D49",
+        bluePrimary3: "#007CCB",
       },
       backgroundImage: {
+        "header-gradient": "linear-gradient(88deg, #9296F6 0%, #4CBAFF 100%);",
         "line-gradient-horizontal":
           "linear-gradient(180deg, rgba(243, 243, 243, 0.47) 0%, rgba(255, 255, 255, 0.00) 100%);",
         "line-gradient-vertical":

@@ -13,20 +13,20 @@ export default function Home() {
     <div className="relative  ">
       <div className="h-[115vh] overflow-hidden  w-[100vw] absolute ">
         <div className="absolute z-20 w-[100%]  h-[100%]">
-          <div className="w-[50%] top-[5%] h-[50%] left-[50%] flex-shrink-0 rounded-[400px] bg-blueCircle absolute blur-[200px]"></div>
-          <div className="w-[50%] top-[10%] h-[45%] left-[2%] flex-shrink-0 absolute rounded-[400px] bg-blueCircle blur-[200px]"></div>
+          <div className="w-[50%] top-[5%] opacity-60 h-[50%] left-[50%] flex-shrink-0 rounded-[400px] bg-blueCircle absolute blur-[200px]"></div>
+          <div className="w-[50%] top-[10%] opacity-60 h-[45%] left-[2%] flex-shrink-0 absolute rounded-[400px] bg-blueCircle blur-[200px]"></div>
         </div>
         <div className="flex w-[100%] z-30 absolute h-[750px] items-start justify-between gap-[75px] flex-shrink-0">
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
-          {/* <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div> */}
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
+          <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
@@ -35,7 +35,7 @@ export default function Home() {
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
           <div className="bg-line-gradient-horizontal w-[1.5px] h-[100%] flex-shrink-0"></div>
         </div>
-        <div className="flex w-[100%] z-30 flex-col absolute h-[300px] justify-between gap-[100px] flex-shrink-0">
+        <div className="flex w-[100%] z-30 flex-col absolute h-[300px] justify-between gap-[80px] flex-shrink-0">
           <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
           <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
           <div className="w-[100%] h-[1px] flex-shrink-0 bg-line-gradient-vertical"></div>
@@ -61,11 +61,11 @@ export default function Home() {
       <ToasterProvider />
       <Header />
       <MainPage />
-      {/* <FeaturesPage />
+      <FeaturesPage />
       <PricingPage />
-      <CallToAction /> */}
+      {/* <CallToAction /> */}
       {/* <FAQ /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

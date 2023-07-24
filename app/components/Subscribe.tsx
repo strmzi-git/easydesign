@@ -39,7 +39,7 @@ const Subscribe = function () {
         placeholder="Email Address"
         id="input"
       />
-      <div className="absolute right-1 rounded-md overflow-hidden  ">
+      <div className="absolute right-1 rounded-lg overflow-hidden  ">
         <Button
           primary
           functionality={handleSubmit(formSubmit)}

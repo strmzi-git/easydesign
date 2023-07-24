@@ -37,35 +37,39 @@ const PricingBody = function () {
   console.log("loop");
   return (
     <div className="">
-      <div className="flex justify-center items-center flex-col gap-6 md:flex-row md:gap-0">
+      <div className="flex justify-center items-center flex-col gap-6 md:flex-row md:gap-4">
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          title="Basic"
-          subtitle="Free tier"
+          title="Starter"
           featuresBool={[true, false, true, false, false, false]}
-          price={"0"}
-          planLabel={"Free Tier"}
+          price={"€0.00"}
+          planLabel={
+            (!user?.annualMembership &&
+              !user?.monthlyMembership &&
+              "Subscribed") ||
+            "Subscribe"
+          }
         />
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          planLabel={"Select Plan"}
+          planLabel={(user?.annualMembership && "Subscribed") || "Subscribe"}
           recommended={true}
-          subtitle="Billed annually"
+          subtitle="billed annually"
           title="Premium"
           priceId="price_1NRYkoHvKmtkdhL0Q2t9xHDz"
-          price={"41.88"}
+          price={"€3.49"}
           featuresBool={[true, true, true, true, true, true]}
         />
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          planLabel={"Select Plan"}
+          planLabel={(!user?.monthlyMembership && "Subscribed") || "Subscribe"}
           subtitle="billed monthly"
           title="Premium"
           priceId="price_1NRYjeHvKmtkdhL0q4d697Fg"
-          price={"4.99"}
+          price={"5.99"}
           featuresBool={[true, true, true, true, true, true]}
         />
       </div>

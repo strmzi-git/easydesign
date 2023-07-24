@@ -33,11 +33,14 @@ const Button = function ({
       className={`
       gap-2
       ${bold ? "font-semibold" : "font-normal"}
-        hover:translate-y-[-5%] transform duration-300
-        ${disabled && "bg-neutral-200 opacity-80 cursor-default"}
+        ${!disabled && "hover:translate-y-[-5%] transform duration-300"}
+        ${disabled && "bg-neutral-200 opacity-30 cursor-default"}
         ${uppercase && "uppercase text-sm shadow-lg font-semibold"}
         ${primary ? " bg-primary1 text-white " : "bg-primary2 text-white"}
-        justify-center shadow-md rounded-sm flex items-center min-w-[150px]  font-light cursor-pointer  px-2
+
+        justify-center shadow-md rounded-lg flex items-center min-w-[150px]  font-semibold  ${
+          disabled ? "cursor-not-allowed" : "cursor-pointer"
+        }   px-2
         ${thin ? "h-[37.5px]" : "h-[45px]"}
         `}
     >
