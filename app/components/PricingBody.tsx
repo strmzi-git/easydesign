@@ -65,7 +65,7 @@ const PricingBody = function () {
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          planLabel={(!user?.monthlyMembership && "Subscribed") || "Subscribe"}
+          planLabel={(user?.monthlyMembership && "Subscribed") || "Subscribe"}
           subtitle="billed monthly"
           title="Premium"
           priceId="price_1NRYjeHvKmtkdhL0q4d697Fg"
