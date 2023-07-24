@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const MainPage = function () {
   return (
-    <div className="relative z-30 h-[600px]">
+    <div className="relative z-30 h-[600px] md:h-[500px]">
       <Container>
         <div className="items-center pt-6 sm:pt-14 h-[430px] z-30 flex flex-col gap-2 relative">
           <h1 className="text-[45px] w-[100%] text-center leading-[45px]  font-semibold tracking-[0.5px] sm:text-[52.5px] sm:leading-[52.5px] md:text-[55.5px] md:leading-[55.5px] lg:text-[70.5px] lg:leading-[70.5px] text-gray900 max-w-[850px]">
