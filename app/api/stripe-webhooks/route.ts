@@ -41,6 +41,7 @@ const endpointSecret =
   "whsec_97b6d02817425ff50b3bf27f247ea5cb8c540bfdbc2a6c92c0325bb73727d72e";
 
 export async function POST(request: any) {
+  console.log("Reached here");
   const rawBody = await readStream(request.body);
   const signature = request.headers.get("stripe-signature");
   try {
@@ -54,11 +55,12 @@ export async function POST(request: any) {
 
   data = event.data;
   eventType = event.type;
-
+  console.log(eventType);
   switch (eventType) {
     case "checkout.session.completed":
       const paymentIntent = event.data.object as Stripe.Checkout.Session;
       const customerId = paymentIntent.customer;
+      const subscriptionId = paymentIntent.subscription;
       const user_ref = paymentIntent.client_reference_id as string;
       const sessionId = paymentIntent.id;
       let purchasedMembership;
@@ -73,19 +75,34 @@ export async function POST(request: any) {
       // update the document
 
       try {
+        console.log(subscriptionId);
+        console.log(event.data.object);
         console.log("PURCHASED PRODUCT:", purchasedMembership);
         const docRef = doc(db, "users", user_ref);
         if (purchasedMembership === "Premium Annually") {
-          updateDoc(docRef, { annualMembership: true, customerId });
+          updateDoc(docRef, {
+            annualMembership: true,
+            customerId,
+            subscriptionId,
+          });
         }
         if (purchasedMembership === "Premium Monthly") {
-          updateDoc(docRef, { monthlyMembership: true, customerId });
+          updateDoc(docRef, {
+            monthlyMembership: true,
+            customerId,
+            subscriptionId,
+          });
         }
       } catch (err) {
         console.log("Error updating document:", err);
       }
       // Payment is successful and the subscription is created.
       // You should provision the subscription and save the customer ID to your database.
+      break;
+
+    case "customer.subscription.deleted":
+      console.log("A cutomer has cancelled their subscription");
+
       break;
     case "invoice.paid":
       // Continue to provision the subsc  ription as payments continue to be made.

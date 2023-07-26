@@ -99,6 +99,7 @@ const PricingBox = function ({
         recommended={recommended || false}
       />
       <button
+        onClick={handleCheckout}
         className={`  
        font-semibold
 

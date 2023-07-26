@@ -6,6 +6,7 @@ import { collection, addDoc } from "firebase/firestore";
 import Input from "./Input";
 import Button from "./Button";
 import { db } from "../firebase";
+import { toast } from "react-hot-toast";
 const Subscribe = function () {
   const {
     handleSubmit,
@@ -24,6 +25,7 @@ const Subscribe = function () {
         email: data.email,
       });
       console.log(docRef.id);
+      toast.success("Successfully added to email list.");
       reset();
     } catch (err) {
       console.log("An error occured!");

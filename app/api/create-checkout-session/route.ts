@@ -2,12 +2,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-interface IParams {
-  priceId: string;
-  success_url: string;
-  userRefId: string;
-}
-
 export async function POST(request: Request) {
   const { priceId, success_url, userRefId } = await request.json();
   console.log(priceId, success_url);

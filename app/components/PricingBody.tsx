@@ -13,6 +13,7 @@ const PricingBody = function () {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
+      console.log(user);
       if (user) {
         try {
           const q = query(

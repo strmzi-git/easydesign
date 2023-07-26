@@ -6,6 +6,7 @@ export type UserType = {
   email?: string;
   phoneNumber?: string | number | null;
   photoURL?: string;
+  subscriptionId?: string;
   providerId?: string;
   uid?: string;
 };
