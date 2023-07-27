@@ -63,7 +63,7 @@ export default function Home() {
       <Header />
       <MainPage />
       <FeaturesPage />
-      <DesignCarousel />
+      {/* <DesignCarousel /> */}
       <PricingPage />
       {/* <CallToAction /> */}
       {/* <FAQ /> */}
