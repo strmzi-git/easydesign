@@ -7,6 +7,7 @@ import Image from "next/image";
 import CallToAction from "./components/PageComponents/CallToAction";
 import Footer from "./components/PageComponents/Footer";
 import FAQ from "./components/FAQ";
+import DesignCarousel from "./components/PageComponents/DesignCarousel";
 // bg-custom-gradient
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
       <Header />
       <MainPage />
       <FeaturesPage />
+      <DesignCarousel />
       <PricingPage />
       {/* <CallToAction /> */}
       {/* <FAQ /> */}

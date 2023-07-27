@@ -6,7 +6,11 @@ import { UserType } from "../types/UserType";
 import { toast } from "react-hot-toast";
 import Feature from "./Feature";
 import Features from "./Features";
-
+import { Quattrocento_Sans } from "next/font/google";
+const quattrocentoSans = Quattrocento_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 interface PricingBoxProps {
   recommended?: boolean;
   title?: string;
@@ -67,33 +71,29 @@ const PricingBox = function ({
   return (
     <div
       className={`
+      ${quattrocentoSans.className}
     relative
-    rounded-2xl    
-    border
+    rounded-2xl font-quattrocentoSans
+    border border-gray900
     px-[12px] py-8
-
-
-    ${
-      recommended
-        ? "border-primary1 w-[100%] shadow-recommended-pricing xs:w-[330px] h-[500px]"
-        : "border-[#E7E7E7] w-[100%] shadow-normal-pricing xs:w-[300px] h-[450px]"
-    }
-
-    
+    w-[100%] xs:w-[300px] h-[400px]
+    ${recommended && "transform -translate-y-[30px]"}
     `}
     >
       {recommended && (
-        <div className="bg-primary1 absolute text-white px-2 py-1 top-0 left-5 rounded-b-lg">
+        <div className="bg-[#90F6EC] quattrocentoSans.className absolute text-gray900 px-4 py-1 -top-4 right-5 rounded-full">
           Recommended
         </div>
       )}
-      <h2 className="text-center text-[28px]">{title}</h2>
-      <div className="flex items-end mb-8 justify-center">
+      <h2 className="text-left leading-[27px] text-[28px]">{title}</h2>
+      <div className="flex items-end mb-2 justify-start">
         <h3 className="text-gray900 text-[32px] font-bold">{price}</h3>{" "}
-        <span className="text-[16px] text-gray900 opacity-40">
+        <span className="text-[16px] text-gray700 opacity-70">
           /mo {subtitle}
         </span>
       </div>
+      <div className="mb-4 bg-gray900 h-[1px]"></div>
+
       <Features
         featuresBool={featuresBool}
         recommended={recommended || false}
@@ -102,13 +102,13 @@ const PricingBox = function ({
         onClick={handleCheckout}
         className={`  
        font-semibold
-
+mt-[22px]
       ${
         !recommended
-          ? "bg-primary1 bg-opacity-[26%] text-bluePrimary3 mt-4  "
-          : "bg-bluePrimary3 text-white mt-10"
+          ? "bg-primary1 bg-opacity-[26%] text-bluePrimary3  "
+          : "bg-bluePrimary3 text-white"
       }
-      w-full rounded-xl py-[11px] text-center text-[18px]
+      w-full rounded-3xl py-[8px] text-center text-[18px]
       `}
       >
         {planLabel}

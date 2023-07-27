@@ -32,7 +32,7 @@ const MainPage = function () {
                     height={50}
                     width={50}
                   />
-                </div>
+                </div>{" "}
                 Easy Design
               </span>
             </span>{" "}

@@ -1,4 +1,4 @@
-import { AiFillCheckSquare } from "react-icons/ai";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 interface FeaturesProps {
   recommended: boolean;
@@ -10,21 +10,23 @@ const Features = function ({
   featuresBool,
 }: FeaturesProps): JSX.Element {
   return (
-    <ul className="list-none  gap-4 relative z-50 flex items-center flex-col my-4">
+    <ul className="list-none text-gray900  gap-[12px] relative z-50 flex items-center flex-col my-2">
       {/* ------ LIST ITEM ------ */}
       <li
-        className={`flex items-center w-[100%] gap-2  ${
+        className={`flex items-center text-gray900 w-[100%] gap-2  ${
           recommended
             ? "text-[16px] xs:text-[19px]"
             : "text-[16px] xs:text-[18px]"
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[0] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[0]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
         Access to free designs
@@ -38,15 +40,17 @@ const Features = function ({
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[1] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[1]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
         Access to
-        <span className="-mx-1 font-semibold text-primary1">premium</span>
+        <span className="-mx-1 text-primary1">premium</span>
         designs
       </li>
       {/* ------ LIST ITEM ------ */}
@@ -58,15 +62,17 @@ const Features = function ({
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[2] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[2]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
         Request
-        <span className="-mx-1 font-semibold text-primary1">custom</span>
+        <span className="-mx-1 text-primary1  ">custom</span>
         designs
       </li>
       {/* ------ LIST ITEM ------ */}
@@ -78,15 +84,17 @@ const Features = function ({
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[3] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[3]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
         Submit
-        <span className="-mx-1 font-semibold text-primary1">personal</span>
+        <span className="-mx-1 text-primary1  ">personal</span>
         designs
       </li>
       {/* ------ LIST ITEM ------ */}
@@ -98,15 +106,17 @@ const Features = function ({
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[4] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[4]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
-        <span className="font-semibold text-primary1 -mr-1">Early</span> access
-        to new designs
+        <span className="text-primary1   -mr-1">Early</span> access to new
+        designs
       </li>
       {/* ------ LIST ITEM ------ */}
       <li
@@ -117,11 +127,13 @@ const Features = function ({
         } leading-[20px]`}
       >
         <div className="h-[20px] w-[20px]">
-          <AiFillCheckSquare
+          <AiOutlineCheckCircle
             size={20}
             className={`${
-              !featuresBool[5] && "opacity-20"
-            } text-primary1 mr-2  `}
+              !featuresBool[5]
+                ? "text-primaryText opacity-30"
+                : "text-[#03DAC5]"
+            }  mr-2  `}
           />
         </div>
         Access to all design assets

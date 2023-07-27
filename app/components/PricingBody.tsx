@@ -38,7 +38,7 @@ const PricingBody = function () {
   console.log("loop");
   return (
     <div className="">
-      <div className="flex justify-center items-center flex-col gap-6 lg:flex-row md:gap-4">
+      <div className="flex justify-center items-center flex-col gap-8 py-6 lg:flex-row md:gap-4">
         <PricingBox
           userRefId={userId}
           currentUser={user}
@@ -70,7 +70,7 @@ const PricingBody = function () {
           subtitle="billed monthly"
           title="Premium"
           priceId="price_1NRYjeHvKmtkdhL0q4d697Fg"
-          price={"5.99"}
+          price={"€5.99"}
           featuresBool={[true, true, true, true, true, true]}
         />
       </div>

@@ -1,11 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
-import Header from "./components/Header";
+import { Quattrocento, Quattrocento_Sans, Raleway } from "next/font/google";
 
-const inter = Raleway({
+const quattrocento = Quattrocento({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={quattrocento.className}>{children}</body>
     </html>
   );
 }

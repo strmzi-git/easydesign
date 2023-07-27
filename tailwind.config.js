@@ -37,7 +37,12 @@ module.exports = {
         blueCircle: "#009cff",
         redCircle: "#A56FFC",
         gray900: "#002D49",
+        gray700: "#293C7D",
+        gray500: "#455899",
+        gray300: "#6071AD",
+        gray100: "#A1B0E4",
         bluePrimary3: "#007CCB",
+        accent2: "#F7C547",
       },
       backgroundImage: {
         "header-gradient": "linear-gradient(88deg, #9296F6 0%, #4CBAFF 100%);",
