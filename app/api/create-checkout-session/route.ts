@@ -2,7 +2,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: Request, response: NextResponse) {
+  const allowedOrigins = ["https://www.easydesign.dev"];
+
   const { priceId, success_url, userRefId } = await request.json();
   const stripe = new Stripe(
     "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",
@@ -12,6 +14,7 @@ export async function POST(request: Request) {
   );
 
   if (!stripe) return;
+
   const total = priceId === "price_1NRYkoHvKmtkdhL0Q2t9xHDz" ? 4188 : 499;
   const name =
     priceId === "price_1NRYkoHvKmtkdhL0Q2t9xHDz"
@@ -42,14 +45,6 @@ export async function POST(request: Request) {
     line_items: [
       {
         price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
-        // price_data: {
-        //   currency: "eur",
-        //   product_data: {
-        //     name: "1€ Tester",
-        //   },
-        //   unit_amount: 100,
-        // },
-        // quantity: 1,
       },
     ],
     // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,
