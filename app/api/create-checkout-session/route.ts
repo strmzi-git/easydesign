@@ -1,10 +1,7 @@
-import { loadStripe } from "@stripe/stripe-js";
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request, response: NextResponse) {
-  const allowedOrigins = ["https://www.easydesign.dev"];
-
+export async function POST(request: Request) {
   const { priceId, success_url, userRefId } = await request.json();
   const stripe = new Stripe(
     "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",
@@ -22,33 +19,23 @@ export async function POST(request: Request, response: NextResponse) {
       : "Premium Monthly";
   const intervals =
     priceId === "price_1NRYkoHvKmtkdhL0Q2t9xHDz" ? "year" : "month";
-  // const qparams: Stripe.Checkout.SessionCreateParams = {
-  //   mode: "subscription",
-  //   line_items: [
-  //     {
-  //       // price: priceId,
-  //       price_data: {
-  //         recurring: {
-  //           interval: intervals,
-  //         },
-  //         currency: "eur",
-  //         product_data: {
-  //           name: name,
-  //         },
-  //         unit_amount: total,
-  //       },
-  //       quantity: 1,
-  //     },
-  //   ],
   const qparams: Stripe.Checkout.SessionCreateParams = {
-    mode: "payment",
+    mode: "subscription",
     line_items: [
       {
-        price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
+        price_data: {
+          recurring: {
+            interval: intervals,
+          },
+          currency: "eur",
+          product_data: {
+            name: name,
+          },
+          unit_amount: total,
+        },
         quantity: 1,
       },
     ],
-    // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,
     success_url: "https://easydesign.dev",
     cancel_url: `https://easydesign.dev`,
     client_reference_id: userRefId,
