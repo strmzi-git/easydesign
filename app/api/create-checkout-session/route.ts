@@ -4,12 +4,8 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const { priceId, success_url, userRefId } = await request.json();
-  console.log(priceId, success_url);
-
-  const origin = request.headers.get("origin");
-  console.log("API KEY:", process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_TEST);
   const stripe = new Stripe(
-    "sk_test_51NRABnHvKmtkdhL0Mbn3QbJHYmVnVWujFYy6nNR97R5P437NAB17Xtla4mWDrwRiR2AWRL0XlQ23ODJUtFAAE70c00sGpdyEVS",
+    "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",
     {
       apiVersion: "2022-11-15",
     }
@@ -23,34 +19,49 @@ export async function POST(request: Request) {
       : "Premium Monthly";
   const intervals =
     priceId === "price_1NRYkoHvKmtkdhL0Q2t9xHDz" ? "year" : "month";
+  // const qparams: Stripe.Checkout.SessionCreateParams = {
+  //   mode: "subscription",
+  //   line_items: [
+  //     {
+  //       // price: priceId,
+  //       price_data: {
+  //         recurring: {
+  //           interval: intervals,
+  //         },
+  //         currency: "eur",
+  //         product_data: {
+  //           name: name,
+  //         },
+  //         unit_amount: total,
+  //       },
+  //       quantity: 1,
+  //     },
+  //   ],
   const qparams: Stripe.Checkout.SessionCreateParams = {
-    mode: "subscription",
+    mode: "payment",
     line_items: [
       {
-        // price: priceId,
+        price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
         price_data: {
-          recurring: {
-            interval: intervals,
-          },
           currency: "eur",
           product_data: {
-            name: name,
+            name: "1€ Tester",
           },
-          unit_amount: total,
+          unit_amount: 100,
         },
         quantity: 1,
       },
     ],
     // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-    success_url: "http://localhost:3000/",
-    cancel_url: `http://localhost:3000/`,
+    success_url: "https://easydesign.dev",
+    cancel_url: `https://easydesign.dev`,
     client_reference_id: userRefId,
   };
   try {
     const checkoutSession: Stripe.Checkout.Session =
       await stripe.checkout.sessions.create(qparams, {
         apiKey:
-          "sk_test_51NRABnHvKmtkdhL0Mbn3QbJHYmVnVWujFYy6nNR97R5P437NAB17Xtla4mWDrwRiR2AWRL0XlQ23ODJUtFAAE70c00sGpdyEVS",
+          "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",
       });
     return NextResponse.json({ id: checkoutSession.id });
   } catch (err) {

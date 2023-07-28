@@ -152,13 +152,13 @@ const Header = function ({ subPage }: HeaderProps) {
                     >
                       Pricing
                     </a>
-                    <a
+                    {/* <a
                       href="#faq"
                       onClick={handleAnchorClick}
                       className=" cursor-pointer"
                     >
                       FAQ
-                    </a>
+                    </a> */}
 
                     <Button
                       primary

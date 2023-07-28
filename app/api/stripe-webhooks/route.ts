@@ -11,7 +11,7 @@ import Stripe from "stripe";
 // };
 
 const stripe = new Stripe(
-  "sk_test_51NRABnHvKmtkdhL0Mbn3QbJHYmVnVWujFYy6nNR97R5P437NAB17Xtla4mWDrwRiR2AWRL0XlQ23ODJUtFAAE70c00sGpdyEVS",
+  "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",
   {
     apiVersion: "2022-11-15",
   }
@@ -55,6 +55,8 @@ export async function POST(request: any) {
 
   data = event.data;
   eventType = event.type;
+  console.log("WEBHOOK RECEVIED:", event.data);
+  console.log("--------------------------------------------------");
   console.log(eventType);
   switch (eventType) {
     case "checkout.session.completed":
@@ -79,6 +81,7 @@ export async function POST(request: any) {
         console.log(event.data.object);
         console.log("PURCHASED PRODUCT:", purchasedMembership);
         const docRef = doc(db, "users", user_ref);
+
         if (purchasedMembership === "Premium Annually") {
           updateDoc(docRef, {
             annualMembership: true,

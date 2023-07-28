@@ -48,14 +48,16 @@ const PricingBody = function () {
           planLabel={
             (!user?.annualMembership &&
               !user?.monthlyMembership &&
-              "Subscribed") ||
-            "Subscribe"
+              "Current Plan") ||
+            false
           }
         />
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          planLabel={(user?.annualMembership && "Subscribed") || "Subscribe"}
+          planLabel={
+            (user?.annualMembership && "Current Plan") || "Get Started"
+          }
           recommended={true}
           subtitle="billed annually"
           title="Premium"
@@ -66,11 +68,23 @@ const PricingBody = function () {
         <PricingBox
           userRefId={userId}
           currentUser={user}
-          planLabel={(user?.monthlyMembership && "Subscribed") || "Subscribe"}
+          planLabel={
+            (user?.monthlyMembership && "Current Plan") || "Get Started"
+          }
           subtitle="billed monthly"
           title="Premium"
           priceId="price_1NRYjeHvKmtkdhL0q4d697Fg"
           price={"€5.99"}
+          featuresBool={[true, true, true, true, true, true]}
+        />
+        <PricingBox
+          userRefId={userId}
+          currentUser={user}
+          planLabel={"buy tester"}
+          subtitle="billed once"
+          title="teste"
+          priceId="price_1NYmEVHvKmtkdhL0CFZMPGtk"
+          price={"€1"}
           featuresBool={[true, true, true, true, true, true]}
         />
       </div>
