@@ -19,23 +19,36 @@ export async function POST(request: Request) {
       : "Premium Monthly";
   const intervals =
     priceId === "price_1NRYkoHvKmtkdhL0Q2t9xHDz" ? "year" : "month";
+  // const qparams: Stripe.Checkout.SessionCreateParams = {
+  //   mode: "subscription",
+  //   line_items: [
+  //     {
+  //       price_data: {
+  //         recurring: {
+  //           interval: intervals,
+  //         },
+  //         currency: "eur",
+  //         product_data: {
+  //           name: name,
+  //         },
+  //         unit_amount: total,
+  //       },
+  //       quantity: 1,
+  //     },
+  //   ],
+  //   success_url: "https://easydesign.dev",
+  //   cancel_url: `https://easydesign.dev`,
+  //   client_reference_id: userRefId,
+  // };
   const qparams: Stripe.Checkout.SessionCreateParams = {
-    mode: "subscription",
+    mode: "payment",
     line_items: [
       {
-        price_data: {
-          recurring: {
-            interval: intervals,
-          },
-          currency: "eur",
-          product_data: {
-            name: name,
-          },
-          unit_amount: total,
-        },
+        price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
         quantity: 1,
       },
     ],
+    // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,
     success_url: "https://easydesign.dev",
     cancel_url: `https://easydesign.dev`,
     client_reference_id: userRefId,
