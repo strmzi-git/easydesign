@@ -45,6 +45,7 @@ export async function POST(request: Request, response: NextResponse) {
     line_items: [
       {
         price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
+        quantity: 1,
       },
     ],
     // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,

@@ -53,14 +53,11 @@ const PricingBox = function ({
         "pk_live_51NRABnHvKmtkdhL0YjiUf4nvGMXqt7ZIt4lwoAwQugMQYQsJ4IpRsLWEZj4vFoRIuYkRzY7xeU9J9fKFYVE03gdM00v3ZbLcDb"
       )) as any;
       try {
-        const response = await axios.post(
-          "https://easydesign.dev/api/create-checkout-session",
-          {
-            priceId,
-            success_url: "/",
-            userRefId: userRefId,
-          }
-        );
+        const response = await axios.post("/api/create-checkout-session", {
+          priceId,
+          success_url: "/",
+          userRefId: userRefId,
+        });
         const result = await stripe.redirectToCheckout({
           sessionId: response.data.id,
         });
