@@ -5,7 +5,7 @@ module.exports = {
       {
         source: "/api/create-checkout-session",
         headers: [
-          { key: "Access-Control-Allow-Credentials", value: "false" },
+          { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
             value: "https://www.easydesign.dev",
