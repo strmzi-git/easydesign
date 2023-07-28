@@ -8,7 +8,7 @@ module.exports = {
           { key: "Access-Control-Allow-Credentials", value: "false" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://easydesign.dev",
+            value: "https://www.easydesign.dev",
           },
           {
             key: "Access-Control-Allow-Methods",
