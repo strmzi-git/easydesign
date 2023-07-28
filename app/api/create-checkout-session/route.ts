@@ -42,14 +42,14 @@ export async function POST(request: Request) {
     line_items: [
       {
         price: "price_1NYmEVHvKmtkdhL0CFZMPGtk",
-        price_data: {
-          currency: "eur",
-          product_data: {
-            name: "1€ Tester",
-          },
-          unit_amount: 100,
-        },
-        quantity: 1,
+        // price_data: {
+        //   currency: "eur",
+        //   product_data: {
+        //     name: "1€ Tester",
+        //   },
+        //   unit_amount: 100,
+        // },
+        // quantity: 1,
       },
     ],
     // success_url: `${origin}/result?session_id={CHECKOUT_SESSION_ID}`,
