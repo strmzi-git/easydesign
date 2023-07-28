@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   console.log("Subscription canceling api params:", subscriptionId, user_ref);
   try {
     const stripe = new Stripe(
-      "sk_test_51NRABnHvKmtkdhL0Mbn3QbJHYmVnVWujFYy6nNR97R5P437NAB17Xtla4mWDrwRiR2AWRL0XlQ23ODJUtFAAE70c00sGpdyEVS",
+      "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",
       {
         apiVersion: "2022-11-15",
       }

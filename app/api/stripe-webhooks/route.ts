@@ -99,8 +99,6 @@ export async function POST(request: any) {
       } catch (err) {
         console.log("Error updating document:", err);
       }
-      // Payment is successful and the subscription is created.
-      // You should provision the subscription and save the customer ID to your database.
       break;
 
     case "customer.subscription.deleted":

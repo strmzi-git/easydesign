@@ -73,8 +73,8 @@ const PricingBody = function () {
           }
           subtitle="billed monthly"
           title="Premium"
-          priceId="price_1NRYjeHvKmtkdhL0q4d697Fg"
-          price={"€5.99"}
+          priceId="price_1NYpDBHvKmtkdhL0fkZf2bP2"
+          price={"€1.00"}
           featuresBool={[true, true, true, true, true, true]}
         />
         <PricingBox
