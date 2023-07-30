@@ -2,8 +2,6 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  console.log(process.env.hello);
-
   const { priceId, success_url, userRefId } = await request.json();
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY_PROD as string, {

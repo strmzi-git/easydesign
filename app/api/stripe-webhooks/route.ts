@@ -27,8 +27,7 @@ async function readStream(readableStream: ReadableStream) {
 let event;
 let eventType;
 let data;
-const endpointSecret =
-  "whsec_97b6d02817425ff50b3bf27f247ea5cb8c540bfdbc2a6c92c0325bb73727d72e";
+const endpointSecret = "whsec_P8Jyc1N059hqWJMYiRKx3xkbgH9zkc7B";
 
 export async function POST(request: any) {
   console.log("Reached here");
