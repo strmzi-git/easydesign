@@ -6,12 +6,9 @@ export async function POST(request: Request) {
 
   const { priceId, success_url, userRefId } = await request.json();
 
-  const stripe = new Stripe(
-    process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_PROD as string,
-    {
-      apiVersion: "2022-11-15",
-    }
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY_PROD as string, {
+    apiVersion: "2022-11-15",
+  });
 
   if (!stripe) return;
 
@@ -60,7 +57,7 @@ export async function POST(request: Request) {
   try {
     const checkoutSession: Stripe.Checkout.Session =
       await stripe.checkout.sessions.create(qparams, {
-        apiKey: process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_PROD as string,
+        apiKey: process.env.STRIPE_SECRET_KEY_PROD as string,
       });
     return NextResponse.json({ id: checkoutSession.id });
   } catch (err) {
