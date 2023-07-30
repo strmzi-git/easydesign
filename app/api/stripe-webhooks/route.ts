@@ -3,19 +3,9 @@ import { doc, updateDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-// export const config = {
-//   api: {
-//     bodyParser: false,
-//   },
-//   runti,
-// };
-
-const stripe = new Stripe(
-  process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_PROD as string,
-  {
-    apiVersion: "2022-11-15",
-  }
-);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY_PROD as string, {
+  apiVersion: "2022-11-15",
+});
 
 async function readStream(readableStream: ReadableStream) {
   const reader = readableStream.getReader();

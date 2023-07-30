@@ -49,10 +49,12 @@ const PricingBox = function ({
     if (!currentUser) {
       toast.error("You must be logged in.");
     } else {
+      console.log();
       const stripe = (await loadStripe(
         process.env.NEXT_PUBLIC_STRIPE_PUBLISH_KEY_PROD as string
       )) as any;
       try {
+        console.log("Helllo");
         const response = await axios.post("/api/create-checkout-session", {
           priceId,
           success_url: "/",

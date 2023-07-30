@@ -35,7 +35,6 @@ const PricingBody = function () {
       }
     });
   }, []);
-  console.log("loop");
   return (
     <div className="">
       <div className="flex justify-center items-center flex-col gap-8 py-6 lg:flex-row md:gap-4">

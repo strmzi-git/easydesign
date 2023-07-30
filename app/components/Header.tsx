@@ -36,6 +36,8 @@ const Header = function ({ subPage }: HeaderProps) {
   const isMobile = useMediaQuery({ maxWidth: "560px" });
   const [theUser, setTheUser] = useState<UserInfo | null>();
   const [userProfile, setUserProfile] = useState<UserType | null>(null);
+  const monthlyMember = userProfile?.monthlyMembership;
+  const annualMember = userProfile?.annualMembership;
 
   const auth = getAuth();
 
@@ -97,6 +99,8 @@ const Header = function ({ subPage }: HeaderProps) {
       );
       const querySnapshot = await getDocs(q);
       const userRefId = querySnapshot.docs[0].id;
+      console.log(userRefId);
+      console.log(subscriptionId);
 
       const response = await axios.post("/api/cancel-subscription", {
         subscriptionId,
@@ -192,7 +196,7 @@ const Header = function ({ subPage }: HeaderProps) {
                         <IoMdExit size={25} />
                       </div>
                     </div>
-                    {userProfile?.annualMembership && (
+                    {(monthlyMember || annualMember) && (
                       <>
                         <button
                           onClick={handleSubscriptionCancel}
