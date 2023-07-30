@@ -50,7 +50,7 @@ const PricingBox = function ({
       toast.error("You must be logged in.");
     } else {
       const stripe = (await loadStripe(
-        "pk_live_51NRABnHvKmtkdhL0YjiUf4nvGMXqt7ZIt4lwoAwQugMQYQsJ4IpRsLWEZj4vFoRIuYkRzY7xeU9J9fKFYVE03gdM00v3ZbLcDb"
+        process.env.NEXT_PUBLIC_STRIPE_PUBLISH_KEY_PROD as string
       )) as any;
       try {
         const response = await axios.post("/api/create-checkout-session", {
