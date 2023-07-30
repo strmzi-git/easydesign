@@ -60,7 +60,7 @@ const PricingBody = function () {
           recommended={true}
           subtitle="billed annually"
           title="Premium"
-          priceId="price_1NRYkoHvKmtkdhL0Q2t9xHDz"
+          priceId="price_1NRYyMHvKmtkdhL0Qte02a8g"
           price={"€3.49"}
           featuresBool={[true, true, true, true, true, true]}
         />
@@ -72,18 +72,8 @@ const PricingBody = function () {
           }
           subtitle="billed monthly"
           title="Premium"
-          priceId="price_1NYpDBHvKmtkdhL0fkZf2bP2"
+          priceId="price_1NRYwoHvKmtkdhL0XL1Hp7Ji"
           price={"€1.00"}
-          featuresBool={[true, true, true, true, true, true]}
-        />
-        <PricingBox
-          userRefId={userId}
-          currentUser={user}
-          planLabel={"buy tester"}
-          subtitle="billed once"
-          title="teste"
-          priceId="price_1NYmEVHvKmtkdhL0CFZMPGtk"
-          price={"€1"}
           featuresBool={[true, true, true, true, true, true]}
         />
       </div>

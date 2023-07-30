@@ -44,17 +44,21 @@ const PricingBox = function ({
   ];
 
   const handleCheckout = async function () {
-    console.log(priceId);
     if (!priceId) return;
     if (!currentUser) {
       toast.error("You must be logged in.");
     } else {
-      console.log();
+      if (
+        (currentUser.annualMembership && subtitle == "billed annually") ||
+        (currentUser.monthlyMembership && subtitle == "billed monthly")
+      ) {
+        toast.success(`You are already subscribed`);
+        return;
+      }
       const stripe = (await loadStripe(
         process.env.NEXT_PUBLIC_STRIPE_PUBLISH_KEY_PROD as string
       )) as any;
       try {
-        console.log("Helllo");
         const response = await axios.post("/api/create-checkout-session", {
           priceId,
           success_url: "/",
@@ -114,7 +118,7 @@ ${!planLabel && "bg-opacity-20"}
       w-full rounded-3xl py-[8px] text-center text-[18px]
       `}
       >
-        {planLabel || "Unsubscribe"}
+        {planLabel || "Get Started"}
       </button>
     </div>
   );

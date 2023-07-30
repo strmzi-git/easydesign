@@ -26,7 +26,7 @@ const Footer = function () {
   return (
     <div className="w-full py-8 px-4 flex-col sm:flex-row gap-4 relative mt-16 border flex items-center justify-between">
       <p>
-        Designed by{" "}
+        Built by{" "}
         <Link
           className="text-primary1 font-semibold "
           href={"https://twitter.com/strmziai"}
