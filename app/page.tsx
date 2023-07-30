@@ -8,6 +8,7 @@ import CallToAction from "./components/PageComponents/CallToAction";
 import Footer from "./components/PageComponents/Footer";
 import FAQ from "./components/FAQ";
 import DesignCarousel from "./components/PageComponents/DesignCarousel";
+import TurningCarousel from "./components/PageComponents/TurningCarousel";
 // bg-custom-gradient
 export default function Home() {
   return (
@@ -63,7 +64,7 @@ export default function Home() {
       <Header />
       <MainPage />
       <FeaturesPage />
-      {/* <DesignCarousel /> */}
+      <TurningCarousel />
       <PricingPage />
       {/* <CallToAction /> */}
       {/* <FAQ /> */}
