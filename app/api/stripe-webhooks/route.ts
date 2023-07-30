@@ -27,14 +27,17 @@ async function readStream(readableStream: ReadableStream) {
 let event;
 let eventType;
 let data;
-const endpointSecret = "whsec_P8Jyc1N059hqWJMYiRKx3xkbgH9zkc7B";
 
 export async function POST(request: any) {
   console.log("Reached here");
   const rawBody = await readStream(request.body);
   const signature = request.headers.get("stripe-signature");
   try {
-    event = stripe.webhooks.constructEvent(rawBody, signature, endpointSecret);
+    event = stripe.webhooks.constructEvent(
+      rawBody,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET as string
+    );
   } catch (err) {
     return NextResponse.json({
       status: 400,
@@ -72,18 +75,20 @@ export async function POST(request: any) {
         const docRef = doc(db, "users", user_ref);
 
         if (purchasedMembership === "Premium Annually") {
-          updateDoc(docRef, {
+          await updateDoc(docRef, {
             annualMembership: true,
             customerId,
             subscriptionId,
           });
         }
         if (purchasedMembership === "Premium Monthly") {
-          updateDoc(docRef, {
+          console.log("Updating ");
+          await updateDoc(docRef, {
             monthlyMembership: true,
             customerId,
             subscriptionId,
           });
+          console.log("Successfully updated");
         }
       } catch (err) {
         console.log("Error updating document:", err);
