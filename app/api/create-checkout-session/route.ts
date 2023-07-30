@@ -2,10 +2,12 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  console.log(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_LIVE);
+  console.log(process.env.hello);
+
   const { priceId, success_url, userRefId } = await request.json();
+
   const stripe = new Stripe(
-    process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_LIVE as string,
+    process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_PROD as string,
     {
       apiVersion: "2022-11-15",
     }
@@ -58,8 +60,7 @@ export async function POST(request: Request) {
   try {
     const checkoutSession: Stripe.Checkout.Session =
       await stripe.checkout.sessions.create(qparams, {
-        apiKey:
-          "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",
+        apiKey: process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY_PROD as string,
       });
     return NextResponse.json({ id: checkoutSession.id });
   } catch (err) {
